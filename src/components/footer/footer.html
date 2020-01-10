@@ -1,0 +1,37 @@
+<ion-toolbar color="light">
+  <ion-segment [(ngModel)]="segments" *ngIf="config.defaultIcons">
+    <ion-segment-button value="CategoriesPage" (click)="openPage('CategoriesPage')">
+      <ion-icon name="apps"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="ProductsPage" (click)="openPage('ProductsPage')">
+      <ion-icon name="cash"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="HomePage" (click)="openPage('HomePage')">
+      <ion-icon name="home"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="NewsPage" (click)="openPage('NewsPage')">
+      <ion-icon name="paper"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="SettingsPage" (click)="openPage('SettingsPage')">
+      <ion-icon name="settings"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-segment [(ngModel)]="segments" *ngIf="!config.defaultIcons">
+    <ion-segment-button value="CategoriesPage" (click)="openPage('CategoriesPage')">
+      <ion-icon><img src="assets/left-menu-icon/category.png"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="ProductsPage" (click)="openPage('ProductsPage')">
+      <ion-icon><img src="assets/left-menu-icon/shop.png"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="HomePage" (click)="openPage('HomePage')">
+      <ion-icon><img src="assets/left-menu-icon/home.png"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="NewsPage" (click)="openPage('NewsPage')">
+      <ion-icon><img src="assets/left-menu-icon/news.png"></ion-icon>
+    </ion-segment-button>
+    <ion-segment-button value="SettingsPage" (click)="openPage('SettingsPage')">
+      <ion-icon><img src="assets/left-menu-icon/setting.png"></ion-icon>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>

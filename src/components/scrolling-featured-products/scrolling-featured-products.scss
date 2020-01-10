@@ -1,0 +1,10 @@
+scrolling-featured-products {
+    .grid{
+        padding: 0px !important;
+        display: inline-block;
+    
+        [col-6]{
+            float: left;
+        }
+    }
+}

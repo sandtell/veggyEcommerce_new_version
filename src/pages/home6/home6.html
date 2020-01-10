@@ -1,0 +1,76 @@
+<!--
+  Generated template for the Home6Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title text-center>
+      <img src="assets/logo_header.png" alt="logo">
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only class="cart-button" (click)="openCart()">
+        <ion-icon name="cart">
+          <ion-badge color="secondary">{{shared.cartquantity}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <banners></banners>
+  <div class="moduletop">
+    <h3>
+      <ion-icon name="apps"></ion-icon>{{ 'Categories' | translate }}
+      <small (click)="openCategoryPage()">{{ 'Shop More' | translate }} <ion-icon name="md-arrow-dropright"></ion-icon>
+      </small>
+    </h3>
+    <categories [type]="'withName'"></categories>
+  </div>
+  <!-- Deals -->
+  <div class="module">
+    <h3>
+      <ion-icon name="md-bookmark"></ion-icon>{{ 'Most Liked' | translate }}
+      <small (click)="openProducts('most liked')">{{ 'Shop More' | translate }} <ion-icon name="md-arrow-dropright">
+        </ion-icon></small>
+    </h3>
+    <ion-slides [slidesPerView]="config.productSlidesPerPage" class="animate-product" dir="{{shared.dir}}">
+      <ion-slide *ngFor="let p of shared.tab3">
+        <product [data]="p" [type]="'normal'"></product>
+      </ion-slide>
+    </ion-slides>
+  </div>
+  <div class="banner" *ngIf="shared.banners.length!=0">
+    <img src="{{shared.banners[shared.banners.length-1].banners_image}}">
+  </div>
+  <div class="module">
+    <h3>
+      <ion-icon name="md-albums"></ion-icon>{{ 'All Products' | translate }}
+      <small (click)="openProducts('featured')">{{ 'Shop More' | translate }} <ion-icon name="md-arrow-dropright">
+        </ion-icon></small>
+    </h3>
+    <scrolling-featured-products></scrolling-featured-products>
+  </div>
+
+  <ion-fab bottom right *ngIf="scrollTopButton">
+    <button ion-fab (click)="scrollToTop()">
+      <ion-icon name="arrow-round-up"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>
+<ion-footer *ngIf="config.footerShowHide==1">
+  <footer></footer>
+</ion-footer>

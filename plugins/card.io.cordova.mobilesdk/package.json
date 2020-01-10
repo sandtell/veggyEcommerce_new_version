@@ -1,0 +1,103 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "card.io.cordova.mobilesdk@2.1.0",
+        "scope": null,
+        "escapedName": "card.io.cordova.mobilesdk",
+        "name": "card.io.cordova.mobilesdk",
+        "rawSpec": "2.1.0",
+        "spec": "2.1.0",
+        "type": "version"
+      },
+      "/Volumes/data/TEST project/ionicEcommerce"
+    ]
+  ],
+  "_from": "card.io.cordova.mobilesdk@2.1.0",
+  "_id": "card.io.cordova.mobilesdk@2.1.0",
+  "_inCache": true,
+  "_location": "/card.io.cordova.mobilesdk",
+  "_nodeVersion": "5.9.1",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/card.io.cordova.mobilesdk-2.1.0.tgz_1474811646181_0.9013033048249781"
+  },
+  "_npmUser": {
+    "name": "paypal",
+    "email": "DL-PP-NODEJS-SDK@paypal.com"
+  },
+  "_npmVersion": "3.7.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "card.io.cordova.mobilesdk@2.1.0",
+    "scope": null,
+    "escapedName": "card.io.cordova.mobilesdk",
+    "name": "card.io.cordova.mobilesdk",
+    "rawSpec": "2.1.0",
+    "spec": "2.1.0",
+    "type": "version"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/card.io.cordova.mobilesdk/-/card.io.cordova.mobilesdk-2.1.0.tgz",
+  "_shasum": "583b9306f6f28ab54cd9d2c89fc35ed93e851488",
+  "_shrinkwrap": null,
+  "_spec": "card.io.cordova.mobilesdk@2.1.0",
+  "_where": "/Volumes/data/TEST project/ionicEcommerce",
+  "author": {
+    "name": "card.io"
+  },
+  "bugs": {
+    "url": "https://github.com/card-io/card.io-Cordova-Plugin/issues"
+  },
+  "cordova": {
+    "id": "card.io.cordova.mobilesdk",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "This plugin allows to add card.io scanning capabilities to your application using card.io SDK Native library",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "583b9306f6f28ab54cd9d2c89fc35ed93e851488",
+    "tarball": "https://registry.npmjs.org/card.io.cordova.mobilesdk/-/card.io.cordova.mobilesdk-2.1.0.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "gitHead": "c4311e75cd531dc2375aa52fedb74f6998911b9d",
+  "homepage": "https://github.com/card-io/card.io-Cordova-Plugin#readme",
+  "keywords": [
+    "card.io",
+    "sdk",
+    "card-scanning",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT License, see LICENSE for details",
+  "maintainers": [
+    {
+      "name": "paypal",
+      "email": "DL-PP-NODEJS-SDK@paypal.com"
+    }
+  ],
+  "name": "card.io.cordova.mobilesdk",
+  "optionalDependencies": {},
+  "readme": "card.io plug-in for Cordova\n---------------------------\n\nThis plug-in exposes card.io credit card scanning.\n\nNote: If you would like to actually process a credit card charge, you might be interested in the [PayPal Cordova Plug-in](https://github.com/paypal/PayPal-Cordova-Plugin).\n\nMaintenance of this repository\n------------------------------\n\nIf you discover a problem here, please submit an Issue or Pull Request. (Unless, of course, the problem is actually in the underlying card.io SDK for either [iOS](https://github.com/card-io/card.io-iOS-SDK) or [Android](https://github.com/card-io/card.io-Android-SDK). We're always interested in discovering and fixing bugs in our SDKs!)\n\nSupported configurations\n------------------------\n\nThe card.io Cordova plugin provides different configurations that could be set according to your requirements. Here are the list of supported configurations.\n\n|  **Configuration**               | **Type** | **Description** |\n|  :------                         | :------  | :------         |\n|  requireExpiry                   | Boolean  | Expiry information will not be required. |\n|  requireCVV                      | Boolean  | The user will be prompted for the card CVV |\n|  requirePostalCode               | Boolean  | The user will be prompted for the card billing postal code. |\n|  suppressManual                  | Boolean  | Removes the keyboard button from the scan screen. |\n|  restrictPostalCodeToNumericOnly | Boolean  | The postal code will only collect numeric input. Set this if you know the expected country's postal code has only numeric postal codes. |\n|  keepApplicationTheme            | Boolean  | The theme for the card.io Activity's will be set to the theme of the application. |\n|  requireCardholderName           | Boolean  | The user will be prompted for the cardholder name |\n|  scanInstructions                | String   | Used to display instructions to the user while they are scanning their card. |\n|  noCamera                        | Boolean  | If set, the card will not be scanned with the camera. |\n|  scanExpiry                      | Boolean  | If scanExpiry is true, an attempt to extract the expiry from the card image will be made. |\n|  languageOrLocale                | String   | The preferred language for all strings appearing in the user interface. If not set, or if set to null, defaults to the device's current language setting. |\n|  guideColor                      | String   | Changes the color of the guide overlay on the camera. The color is provided in hexadecimal format (e.g. \"#FFFFFF\") |\n|  suppressConfirmation            | Boolean  | The user will not be prompted to confirm their card number after processing. |\n|  hideCardIOLogo                  | Boolean  | The card.io logo will not be shown overlaid on the camera. |\n|  useCardIOLogo                   | Boolean  | The card.io logo will be shown instead of the PayPal logo. |\n|  suppressScan                    | Boolean  | Once a card image has been captured but before it has been processed, this value will determine whether to continue processing as usual. |\n\nIntegration instructions\n------------------------\n\nThe card.io Cordova Plugin adds support for the CardIO iOS and android platform. It uses the native CardIO library. Cordova plugin management will set up all the required capabilities/frameworks for the project. The only bit left for you to do is to add necessary files, as described below.\n\n1.\tFollow the official [Cordova](https://cordova.apache.org) documentation to install command line tools.\n2.\tCreate project, add plugin and platforms:\n\n```bash\n\n   $ cordova create ScanCard com.mycompany.scancard \"ScanCard\"\n   $ cd ScanCard\n   $ cordova platform add ios\n   $ cordova platform add android\n   $ cordova plugin add https://github.com/card-io/card.io-Cordova-Plugin\n```\n\n1.\tFollow Your app integration section below.\n2.\tRun `cordova run ios` or `cordova run android` to build and the project.\n\nSample HTML + JS\n----------------\n\n1.\tIn `ScanCard/www/index.html` add the following to lines after `<p class=\"event received\">Device is Ready</p>`:\n\n```javascript\n      <button id=\"scanBtn\"> Scan Now!</button>\n```\n\n1.\tReplace `ScanCard/www/js/index.js` with the following code:\n\n```javascript\n\n    /*\n     * Licensed to the Apache Software Foundation (ASF) under one\n     * or more contributor license agreements.  See the NOTICE file\n     * distributed with this work for additional information\n     * regarding copyright ownership.  The ASF licenses this file\n     * to you under the Apache License, Version 2.0 (the\n     * \"License\"); you may not use this file except in compliance\n     * with the License.  You may obtain a copy of the License at\n     *\n     * http://www.apache.org/licenses/LICENSE-2.0\n     *\n     * Unless required by applicable law or agreed to in writing,\n     * software distributed under the License is distributed on an\n     * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n     * KIND, either express or implied.  See the License for the\n     * specific language governing permissions and limitations\n     * under the License.\n     */\n    var app = {\n        // Application Constructor\n        initialize: function() {\n            this.bindEvents();\n        },\n        // Bind Event Listeners\n        //\n        // Bind any events that are required on startup. Common events are:\n        // 'load', 'deviceready', 'offline', and 'online'.\n        bindEvents: function() {\n            document.addEventListener('deviceready', this.onDeviceReady, false);\n        },\n        // deviceready Event Handler\n        //\n        // The scope of 'this' is the event. In order to call the 'receivedEvent'\n        // function, we must explicitly call 'app.receivedEvent(...);'\n        onDeviceReady: function() {\n            app.receivedEvent('deviceready');\n        },\n        // Update DOM on a Received Event\n        receivedEvent: function(id) {\n            var parentElement = document.getElementById(id);\n            var listeningElement = parentElement.querySelector('.listening');\n            var receivedElement = parentElement.querySelector('.received');\n\n            listeningElement.setAttribute('style', 'display:none;');\n            receivedElement.setAttribute('style', 'display:block;');\n\n            console.log('Received Event: ' + id);\n\n            app.example();\n        },\n\n        example : function () {\n          var cardIOResponseFields = [\n            \"cardType\",\n            \"redactedCardNumber\",\n            \"cardNumber\",\n            \"expiryMonth\",\n            \"expiryYear\",\n            \"cvv\",\n            \"postalCode\"\n          ];\n\n          var onCardIOComplete = function(response) {\n            console.log(\"card.io scan complete\");\n            for (var i = 0, len = cardIOResponseFields.length; i < len; i++) {\n              var field = cardIOResponseFields[i];\n              console.log(field + \": \" + response[field]);\n            }\n          };\n\n          var onCardIOCancel = function() {\n            console.log(\"card.io scan cancelled\");\n          };\n\n          var onCardIOCheck = function (canScan) {\n            console.log(\"card.io canScan? \" + canScan);\n            var scanBtn = document.getElementById(\"scanBtn\");\n            if (!canScan) {\n              scanBtn.innerHTML = \"Manual entry\";\n            }\n            scanBtn.onclick = function (e) {\n              CardIO.scan({\n                  \"requireExpiry\": true,\n                  \"requireCVV\": false,\n                  \"requirePostalCode\": false,\n                  \"restrictPostalCodeToNumericOnly\": true\n                },\n                onCardIOComplete,\n                onCardIOCancel\n              );\n            }\n          };\n\n          CardIO.canScan(onCardIOCheck);\n        }\n    };\n\n    app.initialize();\n\n```\n\nContributing\n------------\n\nPlease read our [contributing guidelines](CONTRIBUTING.md) prior to submitting a Pull Request.\n\nLicense\n-------\n\nPlease refer to this repo's [license file](LICENSE).\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/card-io/card.io-Cordova-Plugin.git"
+  },
+  "scripts": {},
+  "version": "2.1.0"
+}

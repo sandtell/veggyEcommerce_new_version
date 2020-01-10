@@ -1,0 +1,112 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "cordova-plugin-stripe",
+        "scope": null,
+        "escapedName": "cordova-plugin-stripe",
+        "name": "cordova-plugin-stripe",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Volumes/data/TEST project/ionicEcommerce"
+    ]
+  ],
+  "_from": "cordova-plugin-stripe@latest",
+  "_id": "cordova-plugin-stripe@1.5.3",
+  "_inCache": true,
+  "_location": "/cordova-plugin-stripe",
+  "_nodeVersion": "6.11.0",
+  "_npmOperationalInternal": {
+    "host": "s3://npm-registry-packages",
+    "tmp": "tmp/cordova-plugin-stripe-1.5.3.tgz_1499518651595_0.1002744548022747"
+  },
+  "_npmUser": {
+    "name": "ihadeed",
+    "email": "ibby@zyra.ca"
+  },
+  "_npmVersion": "3.10.10",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "cordova-plugin-stripe",
+    "scope": null,
+    "escapedName": "cordova-plugin-stripe",
+    "name": "cordova-plugin-stripe",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-stripe/-/cordova-plugin-stripe-1.5.3.tgz",
+  "_shasum": "62aae5b4ef0d0f4621d0e8498658a55b5133408c",
+  "_shrinkwrap": null,
+  "_spec": "cordova-plugin-stripe",
+  "_where": "/Volumes/data/TEST project/ionicEcommerce",
+  "author": {
+    "name": "Ibby Hadeed",
+    "email": "i.hadeed@zyra.ca"
+  },
+  "bugs": {
+    "url": "https://github.com/ihadeed/cordova-plugin-stripe/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-stripe",
+    "platforms": [
+      "android",
+      "ios",
+      "browser"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova plugin that lets you use Stripe's Native SDKs for Android and iOS",
+  "devDependencies": {
+    "dmd-plugin-cordova-plugin": "^0.1.4",
+    "jsdoc-to-markdown": "^3.0.0",
+    "jshint": "^2.9.4"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "62aae5b4ef0d0f4621d0e8498658a55b5133408c",
+    "tarball": "https://registry.npmjs.org/cordova-plugin-stripe/-/cordova-plugin-stripe-1.5.3.tgz"
+  },
+  "files": [
+    "src",
+    "www",
+    "plugin.xml"
+  ],
+  "gitHead": "48913531c347cba712fac7e1076b62bd130427ae",
+  "homepage": "https://github.com/ihadeed/cordova-plugin-stripe#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-browser",
+    "stripe",
+    "phonegap",
+    "cordova-plugin"
+  ],
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "ihadeed",
+      "email": "ibby@zyra.ca"
+    }
+  ],
+  "name": "cordova-plugin-stripe",
+  "optionalDependencies": {},
+  "readme": "# Cordova Stripe Plugin\nA Cordova plugin that lets you use Stripe Native SDKs for Android, iOS and Browser.\n\n[![npm](https://img.shields.io/npm/l/express.svg)](https://www.npmjs.com/package/cordova-plugin-stripe)\n\n[![NPM](https://nodei.co/npm/cordova-plugin-stripe.png?stars&downloads)](https://nodei.co/npm/cordova-plugin-stripe/)\n[![NPM](https://nodei.co/npm-dl/cordova-plugin-stripe.png?months=6&height=2)](https://nodei.co/npm/cordova-plugin-stripe/)\n\n\n## Installation\n```shell\ncordova plugin add cordova-plugin-stripe\n```\n\n<br>\n<br>\n\n## Usage\n\nFirst we need to set our publishable key. This can be your test or live key.\n```javascript\ncordova.plugins.stripe.setPublishableKey('pk_test_MyPublishableKey');\n```\n\nNow we can create a credit card token to send to our backend.\n\n```javascript\nvar card = {\n  number: '4242424242424242', // 16-digit credit card number\n  expMonth: 12, // expiry month\n  expYear: 2020, // expiry year\n  cvc: '220', // CVC / CCV\n  name: 'John Smith', // card holder name (optional)\n  address_line1: '123 Some Street', // address line 1 (optional)\n  address_line2: 'Suite #220', // address line 2 (optional)\n  address_city: 'Toronto', // city (optional)\n  address_state: 'Ontario', // state/province (optional)\n  address_country: 'Canada', // country (optional)\n  postal_code: 'L5L5L5', // Postal Code / Zip Code (optional)\n  currency: 'CAD' // Three-letter ISO currency code (optional)\n};\n\nfunction onSuccess(tokenId) {\n    console.log('Got card token!', tokenId);\n}\n\nfunction onError(errorMessage) {\n    console.log('Error getting card token', errorMessage);\n}\n\ncordova.plugins.stripe.createCardToken(card, onSuccess, onError);\n\n\n// bank account example\nvar bankAccount = {\n  routing_number: '11000000',\n  account_number: '000123456789',\n  account_holder_name: 'John Smith', // optional\n  account_holder_type: 'individual', // optional\n  currency: 'CAD',\n  country: 'CA'\n};\n\ncordova.plugins.stripe.createBankAccountToken(bankAccount, onSuccess, onError);\n```\n\nOnce you have the token, you can now send it to your backend so you can charge the customer later on.\n\n<br>\n<br>\n\n\n## API Reference\n\n\n* [stripe](#module_stripe)\n    * [.setPublishableKey(key, [success], [error])](#module_stripe.setPublishableKey)\n    * [.createCardToken(creditCard, success, error)](#module_stripe.createCardToken)\n    * [.createBankAccountToken(bankAccount, success, error)](#module_stripe.createBankAccountToken)\n    * [.validateCardNumber(cardNumber, success, error)](#module_stripe.validateCardNumber)\n    * [.validateExpiryDate(expMonth, expYear, success, error)](#module_stripe.validateExpiryDate)\n    * [.validateCVC(cvc, success, error)](#module_stripe.validateCVC)\n    * [.getCardType(cardNumber, success, error)](#module_stripe.getCardType)\n    * [.CreditCardTokenParams](#module_stripe.CreditCardTokenParams) : <code>Object</code>\n    * [.BankAccountTokenParams](#module_stripe.BankAccountTokenParams) : <code>object</code>\n\n\n<br>\n<br>\n\n<a name=\"module_stripe\"></a>\n\n## stripe\n<a name=\"module_stripe.setPublishableKey\"></a>\n\n### stripe.setPublishableKey(key, [success], [error])\nSet publishable key\n\n**Kind**: static method of [<code>stripe</code>](#module_stripe)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| key | <code>string</code> | Publishable key |\n| [success] | <code>function</code> | Success callback |\n| [error] | <code>function</code> | Error callback |\n\n<a name=\"module_stripe.createCardToken\"></a>\n\n### stripe.createCardToken(creditCard, success, error)\nCreate a credit card token\n\n**Kind**: static method of [<code>stripe</code>](#module_stripe)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| creditCard | [<code>CreditCardTokenParams</code>](#module_stripe.CreditCardTokenParams) | Credit card information |\n| success | <code>function</code> | Success callback |\n| error | <code>function</code> | Error callback |\n\n<a name=\"module_stripe.createBankAccountToken\"></a>\n\n### stripe.createBankAccountToken(bankAccount, success, error)\nCreate a bank account token\n\n**Kind**: static method of [<code>stripe</code>](#module_stripe)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| bankAccount | [<code>BankAccountTokenParams</code>](#module_stripe.BankAccountTokenParams) | Bank account information |\n| success | <code>function</code> | Success callback |\n| error | <code>function</code> | Error callback |\n\n<a name=\"module_stripe.validateCardNumber\"></a>\n\n### stripe.validateCardNumber(cardNumber, success, error)\nValidates card number\n\n**Kind**: static method of [<code>stripe</code>](#module_stripe)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| cardNumber | <code>String</code> | Credit card number |\n| success | <code>function</code> | Success callback that will be called if card number is valid |\n| error | <code>function</code> | Error callback that will be called if card number is invalid |\n\n<a name=\"module_stripe.validateExpiryDate\"></a>\n\n### stripe.validateExpiryDate(expMonth, expYear, success, error)\nValidates the expiry date of a card\n\n**Kind**: static method of [<code>stripe</code>](#module_stripe)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| expMonth | <code>number</code> | Expiry month |\n| expYear | <code>number</code> | Expiry year |\n| success | <code>function</code> |  |\n| error | <code>function</code> |  |\n\n<a name=\"module_stripe.validateCVC\"></a>\n\n### stripe.validateCVC(cvc, success, error)\nValidates a CVC of a card\n\n**Kind**: static method of [<code>stripe</code>](#module_stripe)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| cvc | <code>string</code> | CVC/CVV |\n| success | <code>function</code> |  |\n| error | <code>function</code> |  |\n\n**Example**  \n```js\nfunction onSuccess() {\n  console.log('isValid');\n}\n\nfunction onError() {\n  console.log('invalid');\n}\n\ncordova.plugin.stripe.validateCVC('424', onSuccess, onError);\n```\n<a name=\"module_stripe.getCardType\"></a>\n\n### stripe.getCardType(cardNumber, success, error)\nGets a card type from a card number\n\n**Kind**: static method of [<code>stripe</code>](#module_stripe)  \n\n| Param | Type | Description |\n| --- | --- | --- |\n| cardNumber | <code>string</code> | Credit card number |\n| success | <code>function</code> |  |\n| error | <code>function</code> |  |\n\n**Example**  \n```js\ncordova.plugins.stripe.getCardType('4242424242424242', function(cardType) {\n  console.log(cardType); // visa\n});\n```\n<a name=\"module_stripe.CreditCardTokenParams\"></a>\n\n### stripe.CreditCardTokenParams : <code>Object</code>\nParameters to create a credit card token\n\n**Kind**: static typedef of [<code>stripe</code>](#module_stripe)  \n**Properties**\n\n| Name | Type | Description |\n| --- | --- | --- |\n| number | <code>string</code> | Card number |\n| expMonth | <code>number</code> | Expiry month |\n| expYear | <code>number</code> | Expiry year |\n| cvc | <code>string</code> | CVC/CVV |\n| name | <code>string</code> | Cardholder name |\n| address_line1 | <code>string</code> | Address line 1 |\n| address_line2 | <code>string</code> | Address line 2 |\n| address_city | <code>string</code> | Address line 2 |\n| address_state | <code>string</code> | State/Province |\n| address_country | <code>string</code> | Country |\n| postal_code | <code>string</code> | Postal/Zip code |\n| currency | <code>string</code> | 3-letter code for currency |\n\n<a name=\"module_stripe.BankAccountTokenParams\"></a>\n\n### stripe.BankAccountTokenParams : <code>object</code>\nParameters to create a bank account token\n\n**Kind**: static typedef of [<code>stripe</code>](#module_stripe)  \n**Properties**\n\n| Name | Type | Description |\n| --- | --- | --- |\n| routing_number | <code>string</code> | Routing number |\n| account_number | <code>string</code> | Account number |\n| currency | <code>string</code> | Currency code. Example: `CAD`. |\n| country | <code>string</code> | Country code. Example: `CA`. |\n| account_holder_name | <code>string</code> | Account holder name |\n| account_holder_type | <code>string</code> | Account holder type. This can be `individual` or `company`. |\n\n<br>\n<br>\n\n\n<br>\n<br>\n\n## Tests\nTo test this plugin with `cordova-plugin-test-framework`, run the following command to install the tests:\n```shell\ncordova plugin add https://github.com/zyramedia/cordova-plugin-stripe#:/tests\n```\n\n<br>\n<br>\n\n## Browser support\nThis plugin provides browser platform support. Method names and signatures match the [API above](#api). The plugin will automatically inject Stripe.js script into the web page when initialized.\n\n*Thanks to [klirix](https://github.com/klirix) for submitting a [PR](https://github.com/zyramedia/cordova-plugin-stripe/pull/5) for the browser platform.*\n\n\n<br><br>\n## Contribution\n- **Having an issue**? or looking for support? [Open an issue](https://github.com/zyra/cordova-plugin-stripe/issues/new) and we will get you the help you need.\n- Got a **new feature or a bug fix**? Fork the repo, make your changes, and submit a pull request.\n\n## Support this project\nIf you find this project useful, please star the repo to let people know that it's reliable. Also, share it with friends and colleagues that might find this useful as well. Thank you :smile:\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihadeed/cordova-plugin-stripe.git"
+  },
+  "scripts": {
+    "docs": "jsdoc2md --template \"scripts/doc.template.md\" \"www/**/*.js\" > README.md",
+    "jshint": "jshint www && jshint src && jshint tests"
+  },
+  "version": "1.5.3"
+}

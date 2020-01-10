@@ -1,0 +1,22 @@
+<div *ngIf="timer">
+		<div  *ngIf="timeInSeconds && timeInSeconds > 0"  >{{timer.displayTime}}</div>
+		<div  *ngIf="!timeInSeconds || timeInSeconds == 0" >Timer set up incorrectly</div>
+	<!-- <ion-item *ngIf="timeInSeconds && timeInSeconds > 0">
+		<button ion-button clear class="large" color="danger" (click)="initTimer()" item-start *ngIf="!timer.runTimer && (timer.hasStarted || timer.hasFinished) || timer.hasFinished">
+            <ion-icon name="refresh"></ion-icon>
+            Restart
+        </button>
+		<button ion-button clear class="large" (click)="pauseTimer()" item-end *ngIf="timer.runTimer && timer.hasStarted && !timer.hasFinished">
+            <ion-icon name="pause"></ion-icon>
+            Pause
+        </button>
+		<button ion-button clear class="large" (click)="resumeTimer()" item-end *ngIf="!timer.runTimer && timer.hasStarted && !timer.hasFinished">
+            <ion-icon name="play"></ion-icon>
+            Resume
+        </button>
+		<button ion-button clear class="large" (click)="startTimer()" item-end *ngIf="!timer.hasStarted">
+            <ion-icon name="play"></ion-icon>
+            Start
+        </button>
+	</ion-item> -->
+</div>

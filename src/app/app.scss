@@ -1,0 +1,352 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.ios .footer {
+  padding-bottom: calc(constant(safe-area-inset-bottom) + 4px);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 4px);
+  min-height: calc(44px + constant(safe-area-inset-bottom));
+  min-height: calc(44px + env(safe-area-inset-bottom));
+}
+
+.button.button-md, .bar-button.bar-button-md{
+    .button-inner{
+        height: 110%;
+    }
+}
+
+.toolbar{
+    .bar-buttons{
+        .cart-button{
+            position: relative;
+            width: 42px;
+            top:1px;
+            right: 1px;
+            overflow: visible !important;
+            .icon{
+                .badge{
+					font-family:roboto;
+                    background-color: color($colors, secondary-light);
+                    position: absolute;
+                    top: -3px;
+                    right: 0;
+                }
+            }
+        }
+    }
+    .toolbar-title{
+        img{
+            width: 150px;
+            margin-top: 6px;
+        }
+    }
+}
+
+.form{
+    .list {
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        .item {
+            //background-color:$white;
+        }
+    }
+}
+
+.form-secondary{
+    @extend.form;
+    .list{
+        .item {
+            background-color:transparent;
+        }
+    } 
+}
+
+.page-empty{
+    height: 100%;
+    .row{
+        height: 100%;
+        .icon{
+            color:darken(color($colors, light), 20%);
+            font-size:80px;
+        }
+        h4{
+            font-size: 17px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        h5{
+            color:darken(color($colors, light), 40%);
+            font-size: 15px;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+//--------- side menu scss -----
+.side-menu{
+    .list-avatar{
+        margin-bottom: 0;
+        .item:after {
+            content: "";
+            background: url(../assets/icons_stripe.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.10;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;   
+          }
+        .item{
+            background-color:color($colors, primary);
+            height: 80px;
+			
+            ion-avatar{
+                .icon{
+                    color:color($colors, light);
+                    font-size: 50px;
+                    margin-top: -5px;
+                }
+            }
+            h2{
+                font-size: 18px;
+                font-weight: bold;
+                color: $white;
+            }
+            p{
+                color: $white;
+                white-space: normal;
+                font-size: 14px;
+                margin-top: 5px;
+            }
+            button{
+                //color:color($colors, light);
+            }
+        }
+    }
+    .list-menu{
+        .item{
+            border-bottom: 1px solid #dedede;
+            background-color: $white;
+			
+			ion-icon[item-left]{
+				/*background-color:color($colors, light);*/
+				font-size:20px;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				height:35px;
+				width:35px;
+				padding:5px;
+				border-radius:200px;
+				
+				img{
+					width:100%;
+				}
+			}
+			ion-icon[item-right]{
+          margin-right: 15px;
+          margin-left: 15px;
+          font-size: 18px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+          padding: 10px 0px;
+			}
+            .item-inner{
+                border-bottom: none;
+            }
+            &:last-child{
+                border-bottom: none;
+            }
+        }
+    }
+    .animate-item {
+        animation: flipInX 0.75s;
+    }
+}
+.animation-in {
+    animation: fadeIn 1s;
+}
+.animation-out {
+    animation: fadeOut 1s;
+}
+
+
+html[dir="rtl"]{
+    .module{
+        .slides{
+            .swiper-slide:first-child{
+                margin-right: 10px;
+            }
+            .swiper-slide-last {
+                padding-top: 3% !important;
+            }
+        }
+    }
+    .range-md [range-right] {
+        margin: 0 0 0 12px !important;
+    }
+    .range-md [range-left] {
+        margin: 0 12px 0 0 !important;
+    }
+    .text-input, .searchbar-input{
+        direction: rtl;
+    }
+    .product-detail-header [col-4] {
+        text-align: left !important;
+    }
+}
+
+.side-menu .list-menu .item {
+    border-bottom: 1px solid #dedede !important; 
+}
+
+.recent-module,
+.module,
+.moduletop {
+  h3 {
+    margin-bottom: 0px;
+    position: relative;
+    font-size: 1.4rem !important;
+    ion-icon {
+      color: color($colors, primary) !important;
+      font-size: 1em;
+      margin: 5px;
+      margin-left: 0px !important;
+    }
+  }
+  small {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    ion-icon {
+      color: color($colors, secondary) !important;
+      font-size: 1em;
+      margin: 2px;
+    }
+  }
+}
+
+.moduletop {
+  small {
+    right: 10px;
+  }
+}
+
+.swiper-slide-last {
+  padding-top: 25% !important;
+  ion-card-content {
+    h4 {
+      color: color($colors, secondary) !important;
+    }
+    text-transform: uppercase;
+    display: contents;
+    ion-icon {
+      color: color($colors, secondary) !important;
+      font-size: 20px !important;
+      margin-left: 5px;
+    }
+  }
+}
+// =====================         rtl css  =================================
+html[dir="rtl"] {
+  categories .name .swiper-slide:first-child {
+    margin-right: 10px !important;
+  }
+  .module {
+    .slides {
+      .swiper-slide-last {
+        padding-top: 5% !important;
+      }
+    }
+    small {
+      left: 0px;
+      right: auto;
+    }
+    h3 {
+      padding-right: 10px;
+    }
+  }
+  .recent-module,
+  .module,
+  .moduletop {
+    h3 {
+      ion-icon {
+        margin-left: 5px !important;
+        margin-right: 0px !important;
+      }
+    }
+    small {
+      left: 0px;
+      right: auto;
+    }
+  }
+  page-home3 {
+    .slides {
+      .swiper-slide:first-child {
+        margin-right: 0px;
+      }
+    }
+  }
+  .swiper-slide-last {
+    ion-card-content {
+      ion-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+  
+  page-home10,
+  page-home3,
+  page-home4 {
+    .module .slides .swiper-slide:first-child {
+      margin-right: 0px;
+    }
+  }
+  page-home10 {
+    .module h3 {
+      padding-right: 5px;
+    }
+  }
+  page-home8{
+    .module .slides .swiper-slide:first-child {
+      margin-right: 5px;
+      margin-left: 0px;
+    }
+  }
+  page-home10,
+  page-home6,
+  page-home9 {
+    .moduletop {
+      h3 {
+        small {
+          left: 5px !important;
+        }
+      }
+    }
+  }
+}

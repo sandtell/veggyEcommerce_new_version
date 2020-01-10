@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Wallet</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Fetching Data from server...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid *ngIf="noRecord">
+
+    <div padding>
+      <div class="customDiv">
+        <h3 padding-top text-center ion-text color="light">Your Wallet Balance</h3>
+        <p text-center ion-text color="light">₹&nbsp;{{walletBalances}}</p>
+      </div>
+    </div>
+
+    <ion-card *ngFor="let w of walletJson.history">
+      <ion-card-content>
+        <ion-row class="bottomRow">
+          <ion-col col-4><strong>Credit </strong></ion-col>
+          <ion-col col-1 text-center> : </ion-col>
+          <ion-col col-7>₹ {{w.credit}}</ion-col>
+        </ion-row>
+        <ion-row class="bottomRow">
+          <ion-col col-4><strong>Debit </strong></ion-col>
+          <ion-col col-1 text-center> : </ion-col>
+          <ion-col col-7>₹ {{w.debit}}</ion-col>
+        </ion-row>
+        <ion-row class="bottomRow">
+          <ion-col col-4><strong>Date</strong></ion-col>
+          <ion-col col-1 text-center> : </ion-col>
+          <ion-col col-7>{{w.created_at | date:'d MMM yyyy hh:mm a' }}</ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </ion-grid>
+
+ 
+  <div *ngIf="!noRecord" class="noData">
+  
+    <ion-grid style="height: 100%" >
+      <ion-row justify-content-center align-items-center style="height: 100%">
+        <div ion-text color="danger">
+          No Data Found
+        </div>
+      </ion-row>
+    </ion-grid> 
+  
+  </div>
+
+</ion-content>

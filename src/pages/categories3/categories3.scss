@@ -1,0 +1,26 @@
+page-categories3 {
+    .page-categories3{
+
+        .list{
+            .item{
+                ion-avatar{
+                    border-radius: 50%;
+                    overflow: hidden;
+                    display: block;
+                    width: 40px;
+                    height: 40px;
+                    img {
+                        overflow: hidden;
+                         width: 40px; 
+                         height: auto; 
+                         border-radius: 0;
+                    }
+                }
+               
+                background-color: $white;
+            }
+        }
+
+    }      
+}
+  

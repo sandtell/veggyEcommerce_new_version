@@ -1,0 +1,14 @@
+<!-- Generated template for the ScrollingFeaturedProductsComponent component -->
+<ion-grid>
+  <ion-col *ngFor="let p of products" col-6>
+  
+     <product [data]="p" [type]="'normal'"></product>
+  </ion-col>
+
+  <ion-col *ngIf="products.length==0 && !loadingServerData" col-12 class="animated fadeIn">
+    <h6 text-center>{{'No Products Found!'|translate}}</h6>
+  </ion-col>
+</ion-grid>
+<ion-infinite-scroll #infinite (ionInfinite)="getProducts($event)">
+  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+</ion-infinite-scroll>

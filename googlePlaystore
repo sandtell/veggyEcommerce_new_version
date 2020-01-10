@@ -1,0 +1,19 @@
+Google play console credentials 
+email sandtellmobileappcare@gmail.com
+pwd : Sandtell052019$
+
+Micropoint
+-----------------------------
+Steps to generate Release APK
+
+step1 : set PATH=C:\Program Files\Java\jdk1.8.0_221\bin
+step2 : keytool -genkey -v -keystore micropoint.keystore -alias micropoint -keyalg RSA -keysize 2048 -validity 10000
+step3 : jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore micropoint.keystore app-release-unsigned.apk micropoint
+step4 : zipalign -v 4 app-release-unsigned.apk micropoint.apk
+
+-----------------------------
+
+keytool -keystore micropoint.keystore -list -v
+
+-----------------------------
+

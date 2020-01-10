@@ -1,0 +1,19 @@
+page-categories2 {
+    .page-categories2{
+        .list {
+            .item {
+              ion-thumbnail img {
+                width: 80px;
+                height: auto;
+              }
+              background-color: $white;
+              .icon {
+                img {
+                  width: 25px;
+                }
+              }
+            }
+          }
+    }
+}
+  

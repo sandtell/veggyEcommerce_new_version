@@ -1,0 +1,99 @@
+<div class="name" *ngIf="type=='withName'">
+  <ion-slides slidesPerView=2.2 spaceBetween=5 class="animate-product" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let c of shared.categories" (click)="openSubCategories(c)">
+      <ion-card *ngIf="c!=1">
+        <img src="{{config.imgUrl+c.image}}" />
+        <ion-card-content>
+          {{c.name}}
+          <div class="categories-subtitle">{{c.total_products}} {{'Products'| translate }} </div>
+        </ion-card-content>
+       
+      </ion-card>
+      <ion-card *ngIf="c==1">
+        <div class="ph-item" style="padding:0;">
+          <div class="ph-picture"></div>
+          <div class="ph-col-12">
+            <div class="ph-row" style="margin-bottom:0;">
+              <div class="ph-col-12 big"></div>
+            </div>
+          </div>
+        </div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</div>
+<!-- =========================================================== with name and product count -->
+<div class="name-count" *ngIf="type=='name&count'">
+  <ion-slides slidesPerView=2.2 spaceBetween=10 class="animate-product" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let c of shared.categories" (click)="openSubCategories(c)">
+      <ion-card *ngIf="c!=1">
+        <div class="category-icon"><img *ngIf="c.image" src="{{config.imgUrl+c.image}}" /></div>
+        <div class="cateogry-content">
+          <div class="categories-title">{{c.name}}</div>
+          <div class="categories-subtitle">{{c.total_products}} {{'Products'| translate }} </div>
+        </div>
+      </ion-card>
+
+      <ion-card *ngIf="c==1">
+        <div class="ph-item" style="padding:0;">
+          <div class="ph-picture"></div>
+          <div class="ph-col-12">
+            <div class="ph-row" style="margin-bottom:0;">
+              <div class="ph-col-12 big"></div>
+            </div>
+          </div>
+        </div>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</div>
+
+
+<!-- =========================================================== with name and round image -->
+<div class="round" *ngIf="type=='roundImage'">
+  <ion-slides slidesPerView=3.5 class="animate-product" dir="{{shared.dir}}">
+    <ion-slide *ngFor="let c of shared.categories" (click)="openSubCategories(c)">
+
+
+
+      <ion-card *ngIf="c!=1">
+        <div class="category-icon"><img *ngIf="c.image" src="{{config.imgUrl+c.image}}" /></div>
+        <div class="cateogry-content">
+          <div class="categories-title">{{c.name}}</div>
+          <div class="categories-subtitle">{{c.total_products}} {{'Products'| translate }} </div>
+        </div>
+      </ion-card>
+
+
+      <div class="ph-item" style="padding:0;" *ngIf="c==1">
+        <div class="category-icon">
+          <div class="ph-picture"></div>
+        </div>
+        <div class="ph-col-12">
+          <div class="ph-row" style="margin-bottom:0;">
+            <div class="ph-col-12 big"></div>
+          </div>
+        </div>
+      </div>
+
+    </ion-slide>
+  </ion-slides>
+</div>
+
+<!-- =========================================================== with name and round image -->
+<div class="grid" *ngIf="type=='grid'">
+  <ion-grid class="categories-grid">
+    <ion-row>
+      <ion-col col-4 *ngFor="let c of shared.categories | slice:0:6; " (click)="openSubCategories(c)"
+        class="animated fadeIn">
+        <ion-card>
+          <div class="category-icon"><img *ngIf="c.image" src="{{config.imgUrl+c.image}}" /></div>
+          <div class="cateogry-content">
+            <div class="categories-title">{{c.name}}</div>
+            <div class="categories-subtitle">{{c.total_products}} {{'Products'| translate }} </div>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

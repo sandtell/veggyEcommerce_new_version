@@ -1,0 +1,100 @@
+<!--
+  Generated template for the Home8Page page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title text-center>
+      <img src="assets/logo_header.png" alt="logo">
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only (click)="openSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+      <button ion-button icon-only class="cart-button" (click)="openCart()">
+        <ion-icon name="cart">
+          <ion-badge color="secondary">{{shared.cartquantity}}</ion-badge>
+        </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <categories [type]="'roundImage'"></categories>
+  <div class="modules">
+    <!-- Top Seller -->
+    <div class="module">
+      <h3>
+        <ion-icon name="md-albums"></ion-icon>{{ 'Top Seller' | translate }}
+        <small (click)="openProducts('top seller')">{{ 'Shop More' | translate }} <ion-icon name="md-arrow-dropright">
+          </ion-icon></small>
+      </h3>
+      <ion-slides [slidesPerView]="config.productSlidesPerPage" class="animate-product" dir="{{shared.dir}}">
+        <ion-slide *ngFor="let p of shared.tab1">
+          <product [data]="p" [type]="'normal'"></product>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <!-- <h2>{{ 'Share with your friends' | translate }}</h2> -->
+    <!-- Deals -->
+    <div class="module">
+      <h3>
+        <ion-icon name="md-bookmark"></ion-icon>{{ 'Deals' | translate }}
+        <small (click)="openProducts('special')">{{ 'Shop More' | translate }} <ion-icon name="md-arrow-dropright">
+          </ion-icon></small>
+      </h3>
+      <ion-slides [slidesPerView]="config.productSlidesPerPage" class="animate-product" dir="{{shared.dir}}">
+        <ion-slide *ngFor="let p of shared.tab2">
+          <product [data]="p" [type]="'normal'"></product>
+        </ion-slide>
+      </ion-slides>
+    </div>
+    <div class="module">
+      <h3>
+        <ion-icon name="md-star"></ion-icon>{{ 'Most Liked' | translate }}
+        <small (click)="openProducts('most liked')">{{ 'Shop More' | translate }} <ion-icon name="md-arrow-dropright">
+          </ion-icon></small>
+      </h3>
+      <ion-grid>
+        <ion-col *ngFor="let p of shared.tab3" col-6>
+          <product [data]="p" [type]="'normal'"></product>
+        </ion-col>
+
+        <ion-col *ngIf="shared.tab3.length==0" col-12 class="animated fadeIn">
+          <h6 text-center>{{'No Products Found!'|translate}}</h6>
+        </ion-col>
+      </ion-grid>
+    </div>
+  </div>
+
+  <ion-grid class="bottom-area">
+    <ion-row>
+      <ion-col col-6>
+        <ion-icon name="help-buoy"></ion-icon>
+        <div>{{'Contact Us'|translate}}</div>
+        <small>{{config.phoneNo}}</small>
+      </ion-col>
+
+      <ion-col col-6>
+        <ion-icon name="card"></ion-icon>
+        <div>{{'Safe Payment'|translate}}</div>
+        <small>{{'Secure Online Payment'|translate}}</small>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer *ngIf="config.footerShowHide==1">
+  <footer></footer>
+</ion-footer>

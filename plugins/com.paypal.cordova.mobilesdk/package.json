@@ -1,0 +1,107 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "com.paypal.cordova.mobilesdk",
+        "scope": null,
+        "escapedName": "com.paypal.cordova.mobilesdk",
+        "name": "com.paypal.cordova.mobilesdk",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/Volumes/data/TEST project/ionicEcommerce"
+    ]
+  ],
+  "_from": "com.paypal.cordova.mobilesdk@latest",
+  "_id": "com.paypal.cordova.mobilesdk@3.5.0",
+  "_inCache": true,
+  "_location": "/com.paypal.cordova.mobilesdk",
+  "_nodeVersion": "6.10.2",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/com.paypal.cordova.mobilesdk-3.5.0.tgz_1492802085381_0.908551630564034"
+  },
+  "_npmUser": {
+    "name": "paypal",
+    "email": "DL-PP-NODEJS-SDK@paypal.com"
+  },
+  "_npmVersion": "4.2.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "com.paypal.cordova.mobilesdk",
+    "scope": null,
+    "escapedName": "com.paypal.cordova.mobilesdk",
+    "name": "com.paypal.cordova.mobilesdk",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/com.paypal.cordova.mobilesdk/-/com.paypal.cordova.mobilesdk-3.5.0.tgz",
+  "_shasum": "aaaec0b47700ad095113bc06e35f62f0e622ace9",
+  "_shrinkwrap": null,
+  "_spec": "com.paypal.cordova.mobilesdk",
+  "_where": "/Volumes/data/TEST project/ionicEcommerce",
+  "author": {
+    "name": "paypal"
+  },
+  "bugs": {
+    "url": "https://github.com/paypal/PayPal-Cordova-Plugin/issues"
+  },
+  "cordova": {
+    "id": "com.paypal.cordova.mobilesdk",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "This plugin allows to add to add PayPal Payments to your application using PayPal Mobile SDK Native library",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "aaaec0b47700ad095113bc06e35f62f0e622ace9",
+    "tarball": "https://registry.npmjs.org/com.paypal.cordova.mobilesdk/-/com.paypal.cordova.mobilesdk-3.5.0.tgz"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "gitHead": "2768e05510392d19e1e2ecadfe80eb660ef3d5f2",
+  "homepage": "https://github.com/paypal/PayPal-Cordova-Plugin#readme",
+  "keywords": [
+    "paypal",
+    "sdk",
+    "payments",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "BSD License, see LICENSE.md for details",
+  "maintainers": [
+    {
+      "name": "braebot",
+      "email": "braebot@gmail.com"
+    },
+    {
+      "name": "paypal",
+      "email": "DL-PP-NODEJS-SDK@paypal.com"
+    }
+  ],
+  "name": "com.paypal.cordova.mobilesdk",
+  "optionalDependencies": {},
+  "readme": "# PayPal SDK Cordova/Phonegap Plugin\n\n\nDisclaimer\n-----------\nThe intention for this plugin is to make it community driven.\nWe have created the initial version of the plugin to show how easy it is to use our native SDKs (iOS and Android) on the Cordova/Phonegap platforms.\nAs features are added to the mSDK, we will be happy to review and merge any Pull Requests that add these features to the plugin.\n\n\nUpdating from earlier versions < 3.0.0\n-----------------------------\nPlease remove your local copies of the native sdks, the Plugin now includes sdks distributions as part of the source code to make integration and version parity easier to maintain.\n\n\nInstallation\n------------\n\nThe PayPal SDK Cordova/Phonegap Plugin adds support for the PayPal SDK on iOS and Android platforms. It uses the native PayPal Mobile SDK libraries, which you must also download. Cordova plugin management will set up all the required capabilities/frameworks for the project. The only bit left for you to do is to add necessary files, as described below.\n\n\n1. Follow the official [Cordova](https://cordova.apache.org) documentation to install command line tools or [Phonegap](http://phonegap.com/install/).\n2. Create project, add plugin and platforms:\n```bash\n   $ cordova create MyShop com.mycompany.myshop \"MyShop\"\n   $ cd MyShop\n   # using cordova repository (many thanks to @Ramneekhanda for helping with this)\n   $ cordova plugin add com.paypal.cordova.mobilesdk\n   # or you can also install directly from github\n   #$ cordova plugin add https://github.com/paypal/PayPal-Cordova-Plugin\n   $ cordova platform add ios\n   $ cordova platform add android\n   # optional for console.log etc\n   $ cordova plugin add org.apache.cordova.console\n```\n3. Follow Your app integration section below.\n4. Run `cordova build` to build the projects for all of the platforms.\n\n\nPhonegap Build\n--------------\nIf you using phonegap build just add `<gap:plugin name=\"com.paypal.cordova.mobilesdk\" source=\"npm\" />` to your config.xml. To specify a particular version use `<gap:plugin name=\"com.paypal.cordova.mobilesdk\" version=\"3.1.8\" />`.\nFor more details check http://docs.build.phonegap.com/en_US/configuring_plugins.md.html#Plugins\n\nYour app integration\n--------------------\nThe PayPal SDK Cordova/Phonegap Plugin adds 2 JavaScript files to your project.\n\n1. `cdv-plugin-paypal-mobile-sdk.js`: a wrapper around the native SDK. The `PayPalMobile` object is immediately available to use in your `.js` files. You DON'T need to reference it in index.html.\n2. `paypal-mobile-js-helper.js`: a helper file which defines the `PayPalPayment`, `PayPalPaymentDetails` and `PayPalConfiguration` classes for use with `PayPalMobile`.\n3. You must add\n```javascript\n   <script type=\"text/javascript\" src=\"js/paypal-mobile-js-helper.js\"></script>\n```\n   to your `MyShop/www/index.html` file, _after_ the `cordova.js` import.\n\n\nDocumentation\n-------------\n- All calls to PayPalMobile are asynchronous.\n- See `cdv-plugin-paypal-mobile-sdk.js` and `paypal-mobile-js-helper.js` for details and functionality available.\n- For complete documentation regarding the PayPal SDK Cordova Plugin, please refer to the documentation for the underlying [PayPal Mobile SDK](https://developer.paypal.com/webapps/developer/docs/integration/mobile/mobile-sdk-overview/).\n- Not all features available in native sdks have been implemented.\n\nUsing card.io scanning abilities independently\n----------------------------------------------\n\nPayPal SDK Cordova Plugin now allows you to directly invoke card.io scanning abilities as provided by [card.io Cordova Plugin](https://github.com/card-io/card.io-Cordova-Plugin). The implementation is shown below in the samples.\n\n\nBasic Example of the app\n------------------------\n\n1. A complete example code can be checked from here https://github.com/romk1n/MyCordovaShop\n\n1. In `MyShop/www/index.html` add the following to lines after `<p class=\"event received\">Device is Ready</p>`:\n   ```javascript\n      <button id=\"buyNowBtn\"> Buy Now !</button>\n      <button id=\"buyInFutureBtn\"> Pay in Future !</button>\n      <button id=\"profileSharingBtn\"> Profile Sharing !</button>\n      <button id=\"cardScanBtn\">Advanced: Use card.io scan only</button>\n   ```\n\n2. Replace `MyShop/www/js/index.js` with the following code:\n   ```javascript\n\n   /*\n    * Licensed to the Apache Software Foundation (ASF) under one\n    * or more contributor license agreements.  See the NOTICE file\n    * distributed with this work for additional information\n    * regarding copyright ownership.  The ASF licenses this file\n    * to you under the Apache License, Version 2.0 (the\n    * \"License\"); you may not use this file except in compliance\n    * with the License.  You may obtain a copy of the License at\n    *\n    * http://www.apache.org/licenses/LICENSE-2.0\n    *\n    * Unless required by applicable law or agreed to in writing,\n    * software distributed under the License is distributed on an\n    * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n    * KIND, either express or implied.  See the License for the\n    * specific language governing permissions and limitations\n    * under the License.\n    */\n   var app = {\n       // Application Constructor\n       initialize: function() {\n           this.bindEvents();\n       },\n       // Bind Event Listeners\n       //\n       // Bind any events that are required on startup. Common events are:\n       // 'load', 'deviceready', 'offline', and 'online'.\n       bindEvents: function() {\n           document.addEventListener('deviceready', this.onDeviceReady, false);\n       },\n       // deviceready Event Handler\n       //\n       // The scope of 'this' is the event. In order to call the 'receivedEvent'\n       // function, we must explicity call 'app.receivedEvent(...);'\n       onDeviceReady: function() {\n           app.receivedEvent('deviceready');\n       },\n       // Update DOM on a Received Event\n       receivedEvent: function(id) {\n           var parentElement = document.getElementById(id);\n           var listeningElement = parentElement.querySelector('.listening');\n           var receivedElement = parentElement.querySelector('.received');\n\n           listeningElement.setAttribute('style', 'display:none;');\n           receivedElement.setAttribute('style', 'display:block;');\n\n           console.log('Received Event: ' + id);\n\n           // start to initialize PayPalMobile library\n           app.initPaymentUI();\n       },\n       initPaymentUI : function () {\n         var clientIDs = {\n           \"PayPalEnvironmentProduction\": \"YOUR_PRODUCTION_CLIENT_ID\",\n           \"PayPalEnvironmentSandbox\": \"YOUR_SANDBOX_CLIENT_ID\"\n         };\n         PayPalMobile.init(clientIDs, app.onPayPalMobileInit);\n\n       },\n       onSuccesfulPayment : function(payment) {\n         console.log(\"payment success: \" + JSON.stringify(payment, null, 4));\n       },\n       // This code is only used for independent card.io scanning abilities\n       onCardIOComplete: function(card) {\n         console.log(\"Card Scanned success: \" + JSON.stringify(card, null, 4));\n       },\n       onAuthorizationCallback : function(authorization) {\n         console.log(\"authorization: \" + JSON.stringify(authorization, null, 4));\n       },\n       createPayment : function () {\n         // for simplicity use predefined amount\n         // optional payment details for more information check [helper js file](https://github.com/paypal/PayPal-Cordova-Plugin/blob/master/www/paypal-mobile-js-helper.js)\n         var paymentDetails = new PayPalPaymentDetails(\"50.00\", \"0.00\", \"0.00\");\n         var payment = new PayPalPayment(\"50.00\", \"USD\", \"Awesome Sauce\", \"Sale\", paymentDetails);\n         return payment;\n       },\n       configuration : function () {\n         // for more options see `paypal-mobile-js-helper.js`\n         var config = new PayPalConfiguration({merchantName: \"My test shop\", merchantPrivacyPolicyURL: \"https://mytestshop.com/policy\", merchantUserAgreementURL: \"https://mytestshop.com/agreement\"});\n         return config;\n       },\n       onPrepareRender : function() {\n         // buttons defined in index.html\n         //  <button id=\"buyNowBtn\"> Buy Now !</button>\n         //  <button id=\"buyInFutureBtn\"> Pay in Future !</button>\n         //  <button id=\"profileSharingBtn\"> ProfileSharing !</button>\n         //  <button id=\"cardScanBtn\">Advanced: Use card.io scan only</button>\n         var buyNowBtn = document.getElementById(\"buyNowBtn\");\n         var buyInFutureBtn = document.getElementById(\"buyInFutureBtn\");\n         var profileSharingBtn = document.getElementById(\"profileSharingBtn\");\n         var cardScanBtn = document.getElementById(\"cardScanBtn\");\n\n         buyNowBtn.onclick = function(e) {\n           // single payment\n           PayPalMobile.renderSinglePaymentUI(app.createPayment(), app.onSuccesfulPayment, app.onUserCanceled);\n         };\n\n         buyInFutureBtn.onclick = function(e) {\n           // future payment\n           PayPalMobile.renderFuturePaymentUI(app.onAuthorizationCallback, app.onUserCanceled);\n         };\n\n         profileSharingBtn.onclick = function(e) {\n           // profile sharing\n           PayPalMobile.renderProfileSharingUI([\"profile\", \"email\", \"phone\", \"address\", \"futurepayments\", \"paypalattributes\"], app.onAuthorizationCallback, app.onUserCanceled);\n         };\n         \n         cardScanBtn.onclick = function(e) {\n           // card.io scanning independent of paypal payments. \n           // This is used for cases where you only need to scan credit cards and not use PayPal as funding option.\n           CardIO.scan({\n                        \"requireExpiry\": true,\n                        \"requireCVV\": false,\n                        \"requirePostalCode\": false,\n                        \"restrictPostalCodeToNumericOnly\": true\n                      },\n                      app.onCardIOComplete,\n                      app.onUserCanceled\n                    );\n          };\n       },\n       onPayPalMobileInit : function() {\n         // must be called\n         // use PayPalEnvironmentNoNetwork mode to get look and feel of the flow\n         PayPalMobile.prepareToRender(\"PayPalEnvironmentSandbox\", app.configuration(), app.onPrepareRender);\n       },\n       onUserCanceled : function(result) {\n         console.log(result);\n       }\n   };\n\n   app.initialize();\n   ```\n3. execute `cordova run ios` or `cordova run android` to install and run your sample code.\n\n## License\nCode released under [BSD LICENSE](LICENSE)\n\n## Contributions \n Pull requests and new issues are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for details.\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/paypal/PayPal-Cordova-Plugin.git"
+  },
+  "scripts": {},
+  "version": "3.5.0"
+}

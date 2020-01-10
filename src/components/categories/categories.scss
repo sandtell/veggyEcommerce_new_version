@@ -1,0 +1,203 @@
+categories {
+    .name {
+      padding-top: 5px;
+      .swiper-slide:first-child {
+        margin-left: 6px;
+      }
+      .swiper-slide:last-child {
+        margin-right: 6px;
+      }
+      .swiper-slide {
+        padding-left: 5px;
+      }
+      .card-md {
+        text-align: left;
+        display: inline;
+      }
+      .card-content-md {
+        font-size: 0.9em;
+        padding: 5px 0px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        .categories-subtitle {
+          font-size: 0.8em;
+          color: #747474;
+        }
+      }
+      .card-md {
+        margin: 0px;
+      }
+    }
+    .name-count {
+      padding-top: 3px;
+      padding-bottom: 8px;
+  
+      .swiper-slide img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+      }
+      .swiper-slide:first-child {
+        margin-left: 10px;
+      }
+      .card {
+        background-color: $white;
+        width: calc(100% - 1px);
+        position: relative;
+        padding: 15px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+        border-radius: 0;
+        box-shadow: none;
+        text-align: center;
+  
+        .category-icon {
+          height: 80px;
+          width: 80px;
+          margin-left: auto;
+          margin-right: auto;
+          border-radius: 200px;
+          overflow: hidden;
+  
+       
+        }
+        .cateogry-content {
+          margin-top: 10px;
+  
+          .categories-title {
+            font-size: 1em;
+            font-weight: bold;
+            color: #000;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+  
+          .categories-subtitle {
+            font-size: 0.8em;
+            color: #747474;
+          }
+        }
+      }
+    }
+    .round {
+      .swiper-slide img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: none;
+      }
+      .card {
+        //background-color:$white;
+        //width: calc(100% - 1px);
+        position: relative;
+        //padding: 15px;
+        //margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-top: 0;
+        border-radius: 0;
+        box-shadow: none;
+        text-align: center;
+  
+        .category-icon {
+          width: 60px;
+          /* padding: 15px; */
+          margin-left: auto;
+          margin-right: auto;
+          overflow: hidden;
+          height: 60px;
+          border-radius: 200px;
+          margin-top: 15px;
+        }
+        .cateogry-content {
+          margin-top: 10px;
+  
+          .categories-title {
+            // white-space: nowrap;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #000;
+          }
+  
+          .categories-subtitle {
+            font-size: 0.8em;
+            color: #747474;
+          }
+        }
+      }
+      .ph-picture {
+        width: 65px;
+        height: 65px;
+        background-color: #ced4da;
+        margin-bottom: 15px;
+        border-radius: 200px;
+      }
+      .ph-item {
+        padding-left: 36px;
+        padding-top: 15px !important;
+        border: 0px solid #e6e6e6;
+        background-color: transparent;
+      }
+    }
+  
+    .categories-grid {
+      h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+      }
+      .col {
+        //padding: 0.5px;
+  
+        .card {
+          background-color: $white;
+          width: calc(100% - 0px);
+          position: relative;
+          padding: 10px 0px;
+          margin-left: 0;
+          margin-right: 0;
+          margin-bottom: 0;
+          margin-top: 0;
+          border-radius: 0;
+          box-shadow: none;
+          text-align: center;
+          min-height: 156px;
+  
+          .category-icon {
+            height: 80px;
+            width: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 200px;
+            overflow: hidden;
+  
+           
+          }
+          .cateogry-content {
+            margin-top: 10px;
+  
+            .categories-title {
+              font-size: 1em;
+              font-weight: bold;
+              color: #000;
+            }
+  
+            .categories-subtitle {
+              font-size: 0.8em;
+              color: #747474;
+            }
+          }
+        }
+      }
+    }
+  }
+  
