@@ -17,11 +17,13 @@ import { RefundPolicyPage } from '../refund-policy/refund-policy';
 import { TranslateService } from '@ngx-translate/core';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { Md5 } from 'ts-md5';
+import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'page-sign-up',
   templateUrl: 'sign-up.html',
 })
 export class SignUpPage {
+  public myIP;
   formData = {
     customers_firstname: '',
     customers_lastname: '',
@@ -39,6 +41,7 @@ export class SignUpPage {
   errorMessage = '';
   consumerKeyEncript: any;
   consumerSecretEncript: any;
+  
   constructor(
     public httpClient: HttpClient,
     public config: ConfigProvider,
@@ -58,7 +61,22 @@ export class SignUpPage {
 
     this.consumerKeyEncript = Md5.hashStr(this.config.consumerKey);
     this.consumerSecretEncript = Md5.hashStr(this.config.consumerSecret);
+    this.getIpAddress();
   }
+
+  getIpAddress() {
+    let data: Observable<any>;
+    let url = this.config.url + "ipaddress";
+    data = this.httpClient.get(url);    
+      data.subscribe(result => {
+        console.log(result.ip);
+        this.myIP = result.ip;
+        // console.log(result.success);
+      }, error => {
+        console.log(error);
+      });    
+  }
+  
   //openActionSheet() {
     // this.translate.get(["Camera", "Gallery", "Cancel", "Choose"]).subscribe((res) => {
     //   const actionSheet = this.actionSheetCtrl.create({
