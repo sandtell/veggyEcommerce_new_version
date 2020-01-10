@@ -35,7 +35,8 @@ export class SignUpPage {
     consumer_secret: "",
     consumer_nonce: "",
     consumer_device_id: 'device id of the app',
-    image_id: 0
+    image_id: 0,
+    customer_ip: '',
   };
   image = "";
   errorMessage = '';
@@ -62,6 +63,7 @@ export class SignUpPage {
     this.consumerKeyEncript = Md5.hashStr(this.config.consumerKey);
     this.consumerSecretEncript = Md5.hashStr(this.config.consumerSecret);
     this.getIpAddress();
+    
   }
 
   getIpAddress() {
@@ -139,9 +141,19 @@ export class SignUpPage {
   }
   registerUser() {
     //this.loading.show();
+
+    // alert(this.myIP);
+
+    this.formData.customer_ip = this.myIP;
+
+    console.log('formData = ',this.formData);
+
     this.httpClient.post(this.config.url + 'processregistration', this.formData).subscribe((data: any) => {
       this.loading.hide();
       if (data.success == 1) {
+
+        // console.log('Success = ',data.data[0]);
+
         this.shared.login(data.data[0]);
         //this.config.customerData = data.data[0];
         this.viewCtrl.dismiss();
