@@ -34,7 +34,7 @@ if (localStorage.langId == undefined) {
 export class ConfigProvider {
 
 
-  public yourSiteUrl: string = 'http://veggyapp.brilienzacademy.in';
+  public yourSiteUrl: string = 'https://veggyapp.brilienzacademy.in';
   public consumerKey: string = "dadb7a7c1557917902724bbbf5";
   public consumerSecret: string = "3ba77f821557917902b1d57373";
 
